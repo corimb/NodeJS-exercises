@@ -1,0 +1,20 @@
+{
+  "name": "4-1-lodash-union-and-sortby",
+  "version": "1.0.0",
+  "description": "import lodash for union and sortBy exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lodash",
+    "union",
+    "sortBy",
+    "arrays"
+  ],
+  "author": "Corina Borcoci",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
