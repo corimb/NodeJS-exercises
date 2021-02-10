@@ -1,5 +1,5 @@
 {
-  "name": "adalab-code",
+  "name": "express request query params",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "author": "adalab",
+  "author": "Corina Borcoci",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
