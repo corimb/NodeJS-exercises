@@ -1,5 +1,5 @@
 {
-  "name": "express request query params",
+  "name": "express-request-query-params",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
