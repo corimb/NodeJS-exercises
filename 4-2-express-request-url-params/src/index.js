@@ -58,29 +58,28 @@ app.get('/users/:userId/orders', (req, res) => {
   if (user === undefined) {
     res.json({ error: 'user-not-found' });
   } else {
-    res.json(user);
+    res.json(user.orders);
   }
 });
 
 
 // get orders by orderId:
 
-app.get('/users/:userId/:orders/:orderId', (req, res) => {
+app.get('/users/:userId/orders/:orderId', (req, res) => {
   console.log('Url params:', req.params);
   console.log('Url param userId:', req.params.userId);
-  console.log('Url params orders', req.params.orders)
   console.log('Url params orders', req.params.orderId)
 
   // find user by orderId
-  const user = users.find(user => user.orders.id === req.params.orderId);
-  console.log('Found user:', user);
+  const user = users.find(user => user.id === req.params.userId);
+  console.log('Found user:', user.orders.id);
 
 
   // response with selected user data or error
   if (user === undefined) {
     res.json({ error: 'user-not-found' });
   } else {
-    res.json(user);
+    res.json(user.orders.id);
   }
 });
 
