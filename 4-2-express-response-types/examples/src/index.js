@@ -53,14 +53,14 @@ app.get('/response-c', (req, res) => {
 // con un query param user=1 o user=2 debe responder con un json con status 200 y respuesta { result: 'ok' }.
 // si se llama a este endpoint sin query param o con un query param diferente de user=1 o user=2 debe responder un json { result: 'error: invalid query param' } con el status 404.
 
+const users = require('../src/files/data-user.json');
 
 app.get('/response-d', (req, res) => {
-  // more info about http status codes: https://developer.mozilla.org/es/docs/Web/HTTP/Status
-  
- if ((req.query.params.user === 1) || (req.query.params.user === 2)){
-   res.status(200).json({ result: "ok"})
- } else {
-   res.status(404).json({
-  result: 'error: invalid query param'
-   })};
+
+  const userParam = req.query.user;
+  if (userParam && userParam === '1' || userParam === '2'){
+    const usersData = users.find(user => user.id === userParam);
+    res.status(200).json({result: 'OK', usersData})
+  } else
+  res.status(404).json({ result: 'error: invalid query param'})
 });
